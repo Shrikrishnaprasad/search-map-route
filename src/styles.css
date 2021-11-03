@@ -1,0 +1,177 @@
+.App {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #72a1bf;
+  width: 100%;
+  height: 100%;
+}
+.main {
+  width: 1920px;
+  height: 1080px;
+  background: #72a1bf;
+  padding: 24px;
+}
+.main-home {
+  width: 84px;
+  height: 42px;
+  background: #f2faff;
+  border-radius: 4px;
+  display: flex;
+}
+button {
+  cursor: pointer;
+}
+button:hover,
+.main-home:hover,
+.main-home-btn :hover {
+  opacity: 0.9;
+}
+.main-home-btn {
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  font: normal normal normal 14px/19px Segoe UI;
+  letter-spacing: 0px;
+  color: #a0a3a5;
+  text-transform: uppercase;
+  border: none;
+  background: transparent;
+}
+
+.main-container {
+  margin-top: 134px;
+  margin-left: 390px;
+  width: 1160px;
+  background: #074770;
+  border-radius: 36px;
+}
+.main-inputs {
+  height: 120px;
+  display: flex;
+  padding-top: 40px;
+  margin-left: 36px;
+}
+.main-input {
+  margin-right: 20px;
+}
+.input-label {
+  margin-bottom: 8px;
+  text-align: left;
+  font: normal normal normal 14px/19px Segoe UI;
+  letter-spacing: 0px;
+  color: #a5c0d1;
+}
+.inputs {
+  background: #f2faff;
+  border-radius: 4px;
+}
+.inputs > input {
+  border-width: 0px;
+  border: none;
+  outline: none;
+  padding: 12px 15px;
+  font: normal normal normal 14px/19px Segoe UI;
+  letter-spacing: 0px;
+  color: #4f4f4f;
+}
+.location-input {
+  width: 180px;
+}
+.latlog-input {
+  width: 100px;
+}
+.main-button {
+  margin-top: 20px;
+  margin-left: 300px;
+}
+.main-button > button {
+  width: 179px;
+  height: 42px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border-radius: 21px;
+  text-align: center;
+  font: normal normal bold 14px/19px Segoe UI;
+  letter-spacing: 0px;
+  color: #074770;
+}
+
+.main-results {
+  display: inline-flex;
+}
+.main-coordinates {
+  width: 523px;
+  height: 519px;
+  background: #f2faff;
+  border-radius: 0px 0px 0px 36px;
+
+  padding-left: 36px;
+  padding-top: 24px;
+}
+.main-coordinates-text {
+  text-align: left;
+  font: normal normal bold 14px/19px Segoe UI;
+  letter-spacing: 0px;
+  color: #123043;
+  text-transform: uppercase;
+}
+.main-coordinates-list {
+  margin-top: 26px;
+}
+.coordinates {
+  display: flex;
+  text-align: left;
+  font: normal normal normal 14px/19px Segoe UI;
+  letter-spacing: 0px;
+  color: #123043;
+  padding-bottom: 8px;
+}
+.mycoordinates {
+  padding-left: 4px;
+}
+.default-text {
+  font: normal normal bold 14px/19px Segoe UI;
+  letter-spacing: 0px;
+  color: #707070;
+  text-transform: uppercase;
+  opacity: 0.3;
+}
+.coordinates-location {
+  width: 280px;
+}
+.coordinates-number {
+  width: 18px;
+}
+.coordinates-latlon {
+  width: 64px;
+  text-align: left;
+  font: normal normal 600 14px/19px Segoe UI;
+  letter-spacing: 0px;
+  color: #000000;
+  text-transform: uppercase;
+}
+.coordinates-lat {
+  margin-right: 44px;
+}
+.main-coordinates-button {
+  margin-top: 216px;
+}
+.main-coordinates-button > button {
+  width: 445px;
+  height: 42px;
+  background: #074770 0% 0% no-repeat padding-box;
+  border-radius: 21px;
+  opacity: 1;
+  text-align: center;
+  font: normal normal bold 14px/19px Segoe UI;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  border: none;
+}
+.main-map {
+  width: 600px;
+  height: 519px;
+  /* background: transparent url("https://i.stack.imgur.com/sC0S5.png") no-repeat; */
+  background: transparent url("https://i.stack.imgur.com/sC0S5.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border-radius: 0px 0px 36px 0px;
+}
