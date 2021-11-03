@@ -133,6 +133,7 @@ button:hover,
   color: #707070;
   text-transform: uppercase;
   opacity: 0.3;
+  margin-left: -10px;
 }
 .coordinates-location {
   width: 280px;
@@ -151,8 +152,12 @@ button:hover,
 .coordinates-lat {
   margin-right: 44px;
 }
+.default-hyphen {
+  color: #707070;
+  opacity: 0.3;
+}
 .main-coordinates-button {
-  margin-top: 216px;
+  margin-top: 224px;
 }
 .main-coordinates-button > button {
   width: 445px;
@@ -165,6 +170,10 @@ button:hover,
   letter-spacing: 0.5px;
   color: #ffffff;
   border: none;
+}
+.disable-btn {
+  background: #c6d1d9 !important;
+  color: #838a8f !important;
 }
 .main-map {
   width: 600px;
