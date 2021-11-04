@@ -19,6 +19,7 @@
 }
 button {
   cursor: pointer;
+  border: none;
 }
 button:hover,
 .main-home:hover,
@@ -63,6 +64,15 @@ button:hover,
 .inputs {
   background: #f2faff;
   border-radius: 4px;
+}
+.input {
+  border-width: 0px;
+  border: none;
+  outline: none;
+  padding: 12px 15px;
+  font: normal normal normal 14px/19px Segoe UI;
+  letter-spacing: 0px;
+  color: #4f4f4f;
 }
 .inputs > input {
   border-width: 0px;
@@ -177,10 +187,11 @@ button:hover,
 }
 .main-map {
   width: 600px;
-  height: 519px;
+  height: 542px;
   /* background: transparent url("https://i.stack.imgur.com/sC0S5.png") no-repeat; */
-  background: transparent url("https://i.stack.imgur.com/sC0S5.png");
+
+  /* background: transparent url("https://i.stack.imgur.com/sC0S5.png");
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-size: 100% 100%; */
   border-radius: 0px 0px 36px 0px;
 }
