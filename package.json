@@ -9,6 +9,8 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-google-maps": "9.4.5",
+    "react-icons": "4.3.1",
+    "react-map-gl": "6.1.17",
     "react-places-autocomplete": "7.3.0",
     "react-scripts": "4.0.0",
     "react-toastify": "8.1.0",

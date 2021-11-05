@@ -1,11 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import uuid from "react-uuid";
 
 import { useGlobalContext } from "./context";
 import LocationList from "./LocationList";
-import MyMap from "./MyMap";
+import MapSection from "./MapSection";
+
+//import MyMap from "./MyMap";
 
 //import PlacesAutocomplete, { getLatLng } from "react-places-autocomplete";
 
@@ -251,7 +252,8 @@ export default function Container() {
             </div>
           </div>
           <div className="main-map">
-            <MyMap />
+            {/* <MyMap /> */}
+            <MapSection />
           </div>
         </div>
       </div>
