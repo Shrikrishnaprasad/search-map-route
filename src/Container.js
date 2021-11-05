@@ -59,7 +59,7 @@ export default function Container() {
       "Content-Type": "application/json"
     };
     if (coordinates.length > 1) {
-      fetch("http://localhost:5000/map/route", {
+      fetch("https://map-route.herokuapp.com/map/route", {
         method: "POST",
         body: JSON.stringify({ mapId }),
         headers: headersList
