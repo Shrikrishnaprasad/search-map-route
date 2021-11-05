@@ -1,16 +1,25 @@
-import { Fragment, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import uuid from "react-uuid";
+
 import { useGlobalContext } from "./context";
 import LocationList from "./LocationList";
 import MyMap from "./MyMap";
-import PlacesAutocomplete, { getLatLng } from "react-places-autocomplete";
+
+//import PlacesAutocomplete, { getLatLng } from "react-places-autocomplete";
 
 export default function Container() {
   const {
     location,
     setLocation,
     coordinates,
-    setCoordinates
+    setCoordinates,
+    mapId,
+    setMapId
   } = useGlobalContext();
+
+  console.log(mapId);
 
   const [lat, setLat] = useState(0);
   const [lan, setLan] = useState(0);
@@ -22,18 +31,97 @@ export default function Container() {
   //   setLocation(value);
   // };
   const addCoordinates = () => {
-    setCoordinates((prev) => {
-      if (prev.length === 5) {
-        prev.shift();
-      }
-      return [...prev, { location, lat, lan }];
-    });
-    setLocation("");
-    setLat(0);
-    setLan(0);
+    if (lat && lan) {
+      setCoordinates((prev) => {
+        if (prev.length === 5) {
+          prev.shift();
+        }
+        return [...prev, { location, lat, lan }];
+      });
+      setLocation("");
+      setLat(0);
+      setLan(0);
+    } else {
+      toast.warn("Location name is not exists", {
+        position: "top-center",
+        autoClose: 4000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined
+      });
+    }
   };
-
-  const showRoute = () => {};
+  const showRoute = () => {
+    let headersList = {
+      "Content-Type": "application/json"
+    };
+    if (coordinates.length > 1) {
+      fetch("http://localhost:5000/map/route", {
+        method: "POST",
+        body: JSON.stringify({ mapId }),
+        headers: headersList
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          // if (data.message === 1) {
+          //   localStorage.setItem("mapId", data.mapId);
+          // }
+          if (data.message < 6) {
+            toast.success(`Your request count is: ${data.message}`, {
+              position: "top-center",
+              autoClose: 3000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: false,
+              draggable: true,
+              progress: undefined
+            });
+          } else if (data.message === 6) {
+            toast.warn("You exceeded your quota of 5 requests for a minute", {
+              position: "top-center",
+              autoClose: 4000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: false,
+              draggable: true,
+              progress: undefined
+            });
+            toast.info("Try after a minute !", {
+              position: "top-center",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: false,
+              draggable: true,
+              progress: undefined
+            });
+          } else {
+            toast.success(data, {
+              position: "top-center",
+              autoClose: 3000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: false,
+              draggable: true,
+              progress: undefined
+            });
+          }
+        })
+        .catch((err) => console.error(err));
+    } else {
+      toast.info("Add another location to send request !", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined
+      });
+    }
+  };
   function getLatLng() {
     fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${location}&APPID=5a09bc6cc263cdbbb192656fd8a68edf`
@@ -52,6 +140,7 @@ export default function Container() {
   }, [location]);
   return (
     <>
+      <ToastContainer />
       <div className="main-container">
         <div className="main-inputs">
           <div className="main-input main-input-location">

@@ -65,11 +65,12 @@ function MyMap() {
     >
       {/* Child components, such as markers, info windows, etc. */}
       <>
-        {coordinates.map((location, index) => (
-          <Fragment key={index}>
-            <Marker position={{ lat: location.lat, lng: location.lan }} />
-          </Fragment>
-        ))}
+        {list.length > 0 &&
+          list.map((location, index) => (
+            <Fragment key={index}>
+              <Marker position={{ lat: location.lat, lng: location.lan }} />
+            </Fragment>
+          ))}
 
         {/* <DirectionsService
           // required
